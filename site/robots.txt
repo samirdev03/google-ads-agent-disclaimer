@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://marrakeschshop.os-agentruntime.de/sitemap.xml
