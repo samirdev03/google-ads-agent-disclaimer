@@ -4,7 +4,7 @@ Public information site for the internal Google Ads Agent of Marrakesch Shop.
 
 Pages:
 - / — what the agent does and its review workflow
-- /privacy.html — data processing information
+- /privacy.html — detailed data processing information
 - /terms.html — terms and provider details; imprint at #impressum
 
 Deployment:
@@ -16,8 +16,10 @@ Build and run a static Caddy container on the existing opencodeagents Docker net
 The public proxy route is maintained outside this repository. Validate that configuration before reloading the existing edge proxy.
 
 Privacy notice status:
-The published notice was updated after checking the active OAuth token scope lists on the server. They are Google Ads (`adwords`), Merchant Center (`content`), Analytics (`analytics.readonly`) and Search Console (`webmasters.readonly`). The Ads and Merchant Center scopes technically permit broader operations than the current read/report use in all connected components; the notice describes both the granted scope and the current use. The notice does not claim that no personal data can ever be present: Google reports or search terms can contain such information incidentally, and required analysis inputs may be sent to Anthropic.
+The privacy notice names the app and controller, describes the actual active OAuth scopes, lists representative fields returned by each API, explains current uses, storage, recipients, retention/deletion and technical safeguards. The active scopes checked on the server are Google Ads (`adwords`), Merchant Center (`content`), Analytics (`analytics.readonly`) and Search Console (`webmasters.readonly`). The Google Ads integration exposes read and write tools; its write operations require preview and explicit human confirmation. The Merchant Center integration is read-only in current use even though its OAuth scope technically permits more.
 
-Before treating the notice as a complete legal assessment, the operator must confirm the applicable legal basis for each processing purpose, the active Anthropic account and contract terms, retention/deletion settings at Anthropic and infrastructure providers, and any applicable international transfer safeguards. The dashboard currently has no automatic retention period for SQLite history; deletion is manual. The public static Caddy site has no regular access log configured, but provider-level and security/error logs may still exist. The exact retention periods and datacenter locations of the providers depend on the active contracts and settings.
+Google Ads, Search Console and Analytics reports may contain personal information incidentally (for example, a search term). Google data required for an analysis is sent to Claude Code/Anthropic for response generation. The app does not use Google data to train models or for unrelated advertising, profiling or resale. The operator must ensure the Anthropic account is not opted into model training or a development partner program for these inputs.
 
-No tracking scripts, forms, external fonts, or analytics are included.
+Open operator confirmations before treating the notice as a complete legal assessment: confirm the legal basis for each processing purpose; verify the Anthropic account type, training opt-out and data-retention terms; identify the exact infrastructure log-retention/locations and any transfer safeguards; confirm whether stored data at rest is encrypted. OAuth tokens and dashboard history have no automatic retention period. The history has no normal dashboard deletion function; server-side maintenance is required to remove it. The public static Caddy site has no regular access log configured, though provider-level and security/error logs may still exist.
+
+No tracking scripts, forms, external fonts, or website analytics are included.
