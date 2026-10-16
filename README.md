@@ -16,6 +16,8 @@ Build and run a static Caddy container on the existing opencodeagents Docker net
 The public proxy route is maintained outside this repository. Validate that configuration before reloading the existing edge proxy.
 
 Privacy notice status:
-The policy describes current known code paths and services. Exact infrastructure retention, physical server location, the active Anthropic account terms, and applicable international transfer safeguards still require operator confirmation. Review these points before treating the notice as final legal advice or as a final compliance statement.
+The published notice was updated after checking the active OAuth token scope lists on the server. They are Google Ads (`adwords`), Merchant Center (`content`), Analytics (`analytics.readonly`) and Search Console (`webmasters.readonly`). The Ads and Merchant Center scopes technically permit broader operations than the current read/report use in all connected components; the notice describes both the granted scope and the current use. The notice does not claim that no personal data can ever be present: Google reports or search terms can contain such information incidentally, and required analysis inputs may be sent to Anthropic.
+
+Before treating the notice as a complete legal assessment, the operator must confirm the applicable legal basis for each processing purpose, the active Anthropic account and contract terms, retention/deletion settings at Anthropic and infrastructure providers, and any applicable international transfer safeguards. The dashboard currently has no automatic retention period for SQLite history; deletion is manual. The public static Caddy site has no regular access log configured, but provider-level and security/error logs may still exist. The exact retention periods and datacenter locations of the providers depend on the active contracts and settings.
 
 No tracking scripts, forms, external fonts, or analytics are included.
